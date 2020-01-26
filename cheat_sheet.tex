@@ -1,0 +1,43 @@
+%! TEX root = cheat_sheet.tex
+
+\documentclass[a4paper,12pt,%
+              final%
+              %draft%
+              ]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage[top=2cm, bottom=2cm, left=0cm, right=0cm]{geometry}
+
+\usepackage{longtable}
+\usepackage{hhline}
+\usepackage{array}
+
+\usepackage{mathdefs}
+%
+\begin{document}
+
+\begin{center}
+  \Huge \scshape \bfseries \texttt{mathdefs.sty} Cheat-Sheet
+\end{center}
+%
+\begin{center}
+  \begin{longtable}{>{\centering}p{1.0cm} >{\centering}p{1.2cm} l @{ }l}
+    %\hline\hline
+    %\textbf{SMBL} & \textbf{\#A} &\textbf{CALL} & \textbf{MACRO} \\
+    %\hline\hline
+    %\endhead
+    \hhline{====}
+    \textbf{\Large SMB} & \textbf{\Large \#A} &\textbf{\Large CALL} & \textbf{\Large MACRO} \\
+    \hhline{====}
+    \endhead
+      \multicolumn{4}{c}{\Large \bfseries {\scshape JB}'s {\scshape Macros}}\\
+    \hhline{====}
+    \multicolumn{4}{c}{\bfseries Math Shortcuts}\\
+    \hline
+    \input{table.tex}
+  \end{longtable}
+\end{center}
+\end{document}

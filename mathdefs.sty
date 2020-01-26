@@ -1,0 +1,548 @@
+% This package provides useful (and recurrent) math definitions, as well as some
+% shortcuts for environments such as figure
+% The package contains also math macros by Jerome Bonelle for the original CDO
+%
+% Author: Riccardo Milani
+%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mathdefs}[2018/02/28]
+
+\RequirePackage{amssymb}
+%\RequirePackage{amsmath}% Already loaded by mathtools
+\RequirePackage{mathtools}
+\RequirePackage{amsthm}
+\RequirePackage{stmaryrd}% for double square brackets
+\RequirePackage{xspace}
+%\RequirePackage{empheq}% braces inside subequations
+%
+% New commands
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   SECTION: JB MACROS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%=======================
+% Math shortcuts
+%=======================
+\newcommand{\vect}[1]{\underline{#1}}
+\newcommand{\tensor}[1]{\underline{\underline{#1}}}
+\newcommand{\mesure}[1]{\lvert #1 \rvert}
+\newcommand{\tange}[1]{\vect{\tau}_{#1}}
+\newcommand{\norm}{\vect{\nu}}
+\newcommand{\norma}[1]{\norm_{#1}}
+\newcommand{\incid}[2]{\iota_{#1,#2}}
+\newcommand{\mean}[1]{\overline{#1}}
+%\newcommand{\zmean}{ \smallint\negmedspace{\scriptscriptstyle=0}}
+\newcommand{\zmean}{\perp\mathbf{1}}
+%\newcommand{\jump}[1]{\lvert\negmedspace\!\!< #1  >\!\!\negmedspace\rvert}
+\newcommand{\integ}[1]{\int\limits_{#1}}%\,}
+%\newcommand{\dual}[1]{ {#1}^{\ast} }
+\newcommand{\twistm}[1]{ \tilde{#1} }
+\newcommand{\twist}[1]{ \widetilde{#1} }
+\newcommand{\transpose}[1]{ {#1}^{\textsc{t}} }
+\newcommand{\dif}{\,\mathrm{d}}
+\newcommand{\Leq}{\lesssim}
+\newcommand{\pond}[1]{\varpi_{#1}}
+\newcommand{\usc}[1]{^{\textsc{#1}}}
+\newcommand{\EB}{\mathrm{\textsc{EB}}}
+%
+% Sets
+\newcommand{\tq}{\,|\,}
+\newcommand{\Set}[1]{\lbrace #1 \rbrace}
+\newcommand{\Factor}[1]{\left( #1 \right)}
+\newcommand{\Factorb}[1]{\left[ #1 \right]}
+\newcommand{\ar}[3]{\ensuremath{\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}}}
+%
+\newcommand{\Ddi}{\boldsymbol{\delta}}
+\newcommand{\In}{\mathrm{\textsc{i}}}
+\newcommand{\Bd}{\mathrm{\textsc{b}}}
+\newcommand{\pb}{\mathrm{pb}}
+\newcommand{\bc}{\mathrm{bc}}
+\newcommand{\harm}{\mathsf{h}}
+\newcommand{\vb}{\mathsf{vb}}
+\newcommand{\cb}{\mathsf{cb}}
+\newcommand{\bnd}{\partial}
+\newcommand{\pOm}{\bnd\Omega}
+\newcommand{\closure}{\overline{\bnd}}
+%
+\newcommand{\rhs}{\mathsf{RHS}}
+\newcommand{\mom}{\mathsf{mom}}
+\newcommand{\mas}{\mathsf{mas}}
+\newcommand{\vor}{\mathsf{vor}}
+\newcommand{\BC}{\mathsf{B \! C}}
+\newcommand{\Src}{\mathsf{S}}
+\newcommand{\SrcP}{\Src_{\mathsf{p}}}
+\newcommand{\SrcD}{\Src_{\mathsf{d}}}
+
+
+%=======================
+% Variables
+%=======================
+% Continuous setting
+\newcommand{\Oex}{\mathrm{1}}
+\newcommand{\Vit}{u}
+\newcommand{\Vex}{\vect{\Vit}}
+\newcommand{\Vort}{\omega}
+\newcommand{\Wex}{\vect{\Vort}}
+\newcommand{\Pex}{p}
+\newcommand{\Gex}{\vect{g}}
+\newcommand{\Gdual}{\Gex^\zeta}
+\newcommand{\Fex}{\vect{\phi}}
+\newcommand{\Fdual}{\vect{\phi}^\zeta}
+\newcommand{\Sex}{s}
+\newcommand{\Wsex}{\vect{\Vort}^{\ast}}
+\newcommand{\Wsdi}{\Wdi^{\ast}}
+\newcommand{\Psex}{\Pex^{\ast}}
+\newcommand{\Foex}{\vect{f}}
+\newcommand{\Fosex}{\vect{f}^{\ast}}
+\newcommand{\Posex}{\theta}
+\newcommand{\Povex}{\vect{\psi}}
+% % Test functions
+\newcommand{\Vtest}{\vect{v}}
+\newcommand{\Ptest}{q}
+
+% Discrete setting
+\newcommand{\Odi}{\boldsymbol{1}}
+\newcommand{\Vdi}{\mathbf{\Vit}}
+\newcommand{\Wdi}{\boldsymbol{\Vort}}
+\newcommand{\Pdi}{\mathbf{\Pex}}
+\newcommand{\Psdi}{\Pdi^{\ast}}
+\newcommand{\Gdi}{\mathbf{g}}
+\newcommand{\Fdi}{\boldsymbol{\phi}}
+\newcommand{\Sdi}{\mathbf{\Sex}}
+\newcommand{\Sgdi}{\boldsymbol{\sigma}}
+\newcommand{\Fodi}{\mathbf{f}}
+\newcommand{\Posdi}{\boldsymbol{\theta}}
+\newcommand{\Povdi}{\boldsymbol{\psi}}
+\newcommand{\Taudi}{\boldsymbol{\tau}}
+\newcommand{\Xdi}{\mathbf{x}}
+\newcommand{\Ydi}{\mathbf{y}}
+
+% Auxiliary variables
+\newcommand{\Adi}{\mathbf{a}}
+\newcommand{\Bdi}{\mathbf{b}}
+\newcommand{\Qdi}{\mathbf{q}}
+\newcommand{\Vvdi}{\mathbf{w}}
+\newcommand{\Zdi}{\boldsymbol{\zeta}}
+
+% Phenomenological parameters
+\newcommand{\rhop}{(\rho)}
+\newcommand{\rhom}{\rho^{{\scriptscriptstyle -1}}}
+\newcommand{\rhomp}{(\rho)^{{\scriptscriptstyle -1}}}
+\newcommand{\Visc}{\mu}
+\newcommand{\Viscp}{(\Visc)}
+\newcommand{\Viscm}{\Visc^{{\scriptscriptstyle -1}}}
+\newcommand{\Viscpm}{(\Visc)^{{\scriptscriptstyle -1}}}
+\newcommand{\CondTh}{\kappa}
+\newcommand{\CondThp}{(\CondTh)}
+\newcommand{\CondThm}{\CondTh^{{\scriptscriptstyle -1}}}
+\newcommand{\CondThpm}{(\CondTh)^{{\scriptscriptstyle -1}}}
+\newcommand{\TeTh}{\tensor{\CondTh}}
+\newcommand{\TeThav}{\tensor{\widehat \CondTh}} % CondTh Lipschitz
+\newcommand{\alpham}{\alpha^{{\scriptscriptstyle -1}}}
+\newcommand{\alphap}{(\alpha)}
+\newcommand{\alphapm}{(\alpha)^{{\scriptscriptstyle -1}}}
+
+%=======================
+% Mesh entities (also called chain spaces)
+%=======================
+\newcommand{\vtx}{\mathrm{v}}
+\newcommand{\edge}{\mathrm{e}}
+\newcommand{\face}{\mathrm{f}}
+\newcommand{\cell}{\mathrm{c}}
+\newcommand{\x}{\mathrm{x}}
+
+\newcommand{\vtxd}{\twistm{\vtx}}
+\newcommand{\edged}{\twistm{\edge}}
+\newcommand{\faced}{\twistm{\face}}
+\newcommand{\celld}{\twistm{\cell}}
+\newcommand{\yd}{\twistm{\mathrm{y}}}
+\newcommand{\Kd}{\twist{K}}
+
+\newcommand{\pt}{\vect{x}}
+\newcommand{\nent}[2]{\mathrm{n}_{#1,#2}}
+\newcommand{\edgev}{\vect{\edge}}
+\newcommand{\edgedv}{\vect{\edged}}
+\newcommand{\facev}{\vect{\face}}
+\newcommand{\facedv}{\vect{\faced}}
+
+% Set of mesh entities
+\newcommand{\Mesh}{\mathrm{M}}
+\newcommand{\xh}{\mathrm{X}}
+\newcommand{\vtxh}{\mathrm{V}}
+\newcommand{\edgeh}{\mathrm{E}}
+\newcommand{\faceh}{\mathrm{F}}
+\newcommand{\cellh}{\mathrm{C}}
+%
+\newcommand{\Meshd}{\twist{\Mesh}}
+\newcommand{\yhd}{\twist{\mathrm{Y}}}
+\newcommand{\vtxhd}{\twist{\vtxh}}
+\newcommand{\edgehd}{\twist{\edgeh}}
+\newcommand{\facehd}{\twist{\faceh}}
+\newcommand{\cellhd}{\twist{\cellh}}
+
+% Sous-maillage
+\newcommand{\svol}{\mathfrak{s}} % subsimplex
+\newcommand{\Svol}[1]{\svol^{\textsc{#1}}}
+\newcommand{\Smesh}{\mathfrak{S}}
+\newcommand{\pvol}{\mathfrak{p}} % partition
+\newcommand{\Pvol}{\mathfrak{P}}
+\newcommand{\Part}[1]{\Pvol_{#1}}
+\newcommand{\Pmesh}[1]{\Part{#1}}
+\newcommand{\PVmesh}{\Pmesh{\textsc{v},\cell}}
+\newcommand{\PEmesh}{\Pmesh{\textsc{e},\cell}}
+\newcommand{\PFmesh}{\Pmesh{\textsc{f},\cell}}
+\newcommand{\PEFmesh}{\Pmesh{\textsc{ef},\cell}}
+\newcommand{\tef}{\mathfrak{t}_{\edge\face}}
+\newcommand{\pef}{\pvol_{\edge\face,\cell}}
+\newcommand{\pfc}{\pvol_{\face,\cell}}
+%
+\newcommand{\frakc}{\mathfrak{c}}
+\newcommand{\frakt}{\mathfrak{t}}
+\newcommand{\frake}{\mathfrak{e}}
+\newcommand{\frakv}{\mathfrak{v}}
+\newcommand{\frakC}{\mathfrak{C}}
+\newcommand{\frakT}{\mathfrak{T}}
+\newcommand{\frakE}{\mathfrak{E}}
+\newcommand{\frakV}{\mathfrak{V}}
+%
+\newcommand{\Step}{h}
+\newcommand{\StepMesh}{\Step_{\scriptscriptstyle{\Mesh}}}
+\newcommand{\Stepc}{\Step_{\cell}}
+
+%=======================
+% DoF spaces (also called cochain spaces)
+%=======================
+\newcommand{\vtxsp}{\mathcal{V}}
+\newcommand{\edgesp}{\mathcal{E}}
+\newcommand{\facesp}{\mathcal{F}}
+\newcommand{\cellsp}{\mathcal{C}}
+
+\newcommand{\vtxspd}{\twist{\vtxsp}}
+\newcommand{\edgespd}{\twist{\edgesp}}
+\newcommand{\facespd}{\twist{\facesp}}
+\newcommand{\cellspd}{\twist{\cellsp}}
+\newcommand{\xsp}{\mathcal{X}}
+\newcommand{\ysp}{\mathcal{Y}}
+\newcommand{\yspd}{\twist{\mathcal{Y}}}
+
+\newcommand{\PrimalDual}[2]{{\scriptscriptstyle{#1}}{\textstyle \twistm{{\scriptscriptstyle{#2}}}}}
+\newcommand{\EpFd}{\PrimalDual{\edgesp}{\facesp}}
+\newcommand{\VpCd}{\PrimalDual{\vtxsp}{\cellsp}}
+\newcommand{\FpEd}{\PrimalDual{\facesp}{\edgesp}}
+\newcommand{\CpVd}{\PrimalDual{\cellsp}{\vtxsp}}
+\newcommand{\XpYd}{\PrimalDual{\xsp}{\ysp}}
+\newcommand{\DualPrimal}[2]{{\textstyle \twistm{{\scriptscriptstyle{#1}}}}{\scriptscriptstyle{#2}}}
+\newcommand{\VdCp}{\DualPrimal{\vtxsp}{\cellsp}}
+\newcommand{\EdFp}{\DualPrimal{\edgesp}{\facesp}}
+\newcommand{\FdEp}{\DualPrimal{\facesp}{\edgesp}}
+\newcommand{\CdVp}{\DualPrimal{\cellsp}{\vtxsp}}
+\newcommand{\YdXp}{\DualPrimal{\ysp}{\xsp}}
+
+\newcommand{\PrimalDualSub}[3]{ {\scriptscriptstyle{#1_{#3}}}{\textstyle \twistm{{\scriptscriptstyle{#2}}}_{\scriptscriptstyle{#3}}} }
+\newcommand{\EpFdc}{\PrimalDualSub{\edgesp}{\facesp}{\cell}}
+\newcommand{\VpCdc}{\PrimalDualSub{\vtxsp}{\cellsp}{\cell}}
+\newcommand{\FpEdc}{\PrimalDualSub{\facesp}{\edgesp}{\cell}}
+\newcommand{\CpVdc}{\PrimalDualSub{\cellsp}{\vtxsp}{\cell}}
+\newcommand{\XpYdc}{\PrimalDualSub{\xsp}{\ysp}{\cell}}
+\newcommand{\DualPrimalSub}[3]{ {\textstyle \twistm{{\scriptscriptstyle{#1}}}_{\scriptscriptstyle{#3}}}{\scriptscriptstyle{#2_{#3}}} }
+\newcommand{\FdEpc}{\DualPrimalSub{\facesp}{\edgesp}{\cell}}
+\newcommand{\EdFpc}{\DualPrimalSub{\edgesp}{\facesp}{\cell}}
+\newcommand{\YdXpc}{\DualPrimalSub{\ysp}{\xsp}{\cell}}
+
+%=======================
+% Operators
+%=======================
+\newcommand{\Ker}{\operatorname{Ker}}
+\newcommand{\Ran}{\operatorname{Im}}
+\newcommand{\Harm}[1]{\operatorname{Harm}#1}
+\DeclareMathOperator{\ima}{im}
+\DeclareMathOperator{\trace}{tr}
+\DeclareMathOperator{\card}{card}
+%\DeclareMathOperator{\Dim}{dim}
+\DeclareMathOperator{\domain}{domain}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\grd}{\vect{grad}}
+\DeclareMathOperator{\divm}{div}
+\DeclareMathOperator{\curl}{\vect{curl}}
+\DeclareMathOperator{\grdt}{\tensor{\mathrm{grad}}}
+\DeclareMathOperator{\divv}{\vect{div}}
+\DeclareMathOperator{\lapvec}{\vect{\Delta}}
+
+%=======================
+% Discrete Operators
+%=======================
+\newcommand{\opid}{\mathsf{Id}}
+\newcommand{\TeId}{\tensor{\opid}}
+%
+% Discrete differential operators
+\newcommand{\opgrad}{\mathsf{GRAD}}
+\newcommand{\opdiv}{\mathsf{DIV}}
+\newcommand{\opcurl}{\mathsf{CURL}}
+\newcommand{\opgradd}{\twist{\opgrad}}
+\newcommand{\opdivd}{\twist{\opdiv}}
+\newcommand{\opcurld}{\twist{\opcurl}}
+%
+% Reduction or de Rham map
+\newcommand{\opred}{\mathsf{R}}
+\newcommand{\opRed}[1]{\opred_{#1}}
+%
+% Projection maps
+\newcommand{\opproj}{\mathsf{T}} %modif: before P
+\newcommand{\opProj}[1]{\opproj_{#1}}
+\newcommand{\PVc}{\opProj{\vtxsp,\cell}}
+\newcommand{\PEc}{\opProj{\edgesp,\cell}}
+\newcommand{\PFc}{\opProj{\facesp,\cell}}
+%
+\newcommand{\optrans}{\mathsf{T}}
+\newcommand{\opT}[1]{\optrans_{#1}}
+%
+% Hodge operators
+\newcommand{\opHodge}{\mathsf{H}}
+\newcommand{\opHodgec}{\hat{\opHodge}}
+\newcommand{\opHodgeFull}[3]{\opHodge_{#1}^{\scriptscriptstyle{#2 #3}}}
+\newcommand{\Hperp}{\perp\opHodge}
+%
+% Reconstruction operators
+\newcommand{\conf}{{\rm conf}}
+%
+\newcommand{\oprec}{\mathtt{L}}
+\newcommand{\opcrec}{\mathtt{C}}
+\newcommand{\opsrec}{\mathtt{S}}
+\newcommand{\opRec}[1]{\oprec_{#1}}
+\newcommand{\opReco}[1]{\oprec_{#1}}
+\newcommand{\opCRec}[1]{\opcrec_{#1}}
+\newcommand{\opSRec}[1]{\opsrec_{#1}}
+\newcommand{\opShRec}[1]{\hat{\opsrec}_{#1}}
+\newcommand{\opRecv}[1]{\vect{\oprec}_{#1}}
+\newcommand{\opCRecv}[1]{\vect{\opcrec}_{#1}}
+\newcommand{\opSRecv}[1]{\vect{\opsrec}_{#1}}
+\newcommand{\opShRecv}[1]{\hat{\vect{\opsrec}}_{#1}}
+% Deprecated
+\newcommand{\opRecc}[1]{\oprec_{#1}^\conf}
+\newcommand{\opRecvc}[1]{\vect{\oprec}_{#1}^\conf}
+%
+% Fonctions de reconstruction
+\newcommand{\freco}{\ell}
+\newcommand{\frecov}{\vect{\freco}}
+\newcommand{\Freco}[2]{\freco_{#1}^{\textsc{#2}}}
+\newcommand{\Frecov}[2]{\frecov_{#1}^{\textsc{#2}}}
+\newcommand{\frecoc}{\freco^\conf}
+\newcommand{\frecovc}{\frecov^\conf}
+\newcommand{\fform}{\varphi}
+\newcommand{\Fform}[1]{\fform^{\textsc{#1}}}
+\newcommand{\Fformv}[1]{\vect{\fform}^{\textsc{#1}}}
+%
+% Approximation maps
+\newcommand{\opapx}{\mathtt{A}}
+\newcommand{\opapxv}{\vect{\opapx}}
+\newcommand{\opApx}[1]{\opapx_{#1}}
+\newcommand{\opApxv}[1]{\opapxv_{#1}}
+% Deprecated
+\newcommand{\opApxc}[1]{\opapx_{#1}^\conf}
+\newcommand{\opApxvc}[1]{\opapxv_{#1}^\conf}
+%
+\newcommand{\Commut}[2]{\lfloor #1, \, #2 \rceil}
+%
+% Generic operators
+\newcommand{\opA}{\mathsf{A}}
+\newcommand{\opB}{\mathsf{B}}
+\newcommand{\opC}{\mathsf{C}}
+\newcommand{\opD}{\mathsf{D}}
+\newcommand{\opBt}{\transpose{\opB}}
+\newcommand{\opCt}{\transpose{\opC}}
+\newcommand{\opDt}{\transpose{\opD}}
+%
+%=======================
+% Stokes
+%=======================
+%
+\newcommand{\Wt}{\Wex_{\tau}^{\bc}}
+\newcommand{\Un}{\Vit_\nu^{\bc}}
+\newcommand{\Ut}{\Vex_\tau^{\bc}}
+\newcommand{\Pbc}{\Pex^{\bc}}
+\newcommand{\UnWt}{\textbf{(UnWt)}\@\xspace}
+\newcommand{\UtPr}{\textbf{(UtPr)}\@\xspace}
+\newcommand{\PL}{\cblue{(PL)}\@\xspace}
+\newcommand{\DL}{\cred{(DL)}\@\xspace}
+%
+%=======================
+% Functional analysis
+%=======================
+\newcommand{\Hcurl}[1]{H(\vect{\rm curl};#1)}
+\newcommand{\Hdiv}[1]{H({\rm div};#1)}
+\newcommand{\Hilbert}[1]{H^{#1}}
+\newcommand{\Sobolev}[2]{W^{#1,#2}}
+\newcommand{\Lebesgue}[1]{L^{#1}}
+\newcommand{\Hilbertv}[1]{\vect{H}^{#1}}
+\newcommand{\Sobolevv}[2]{\vect{W}^{#1,#2}}
+\newcommand{\Lebesguev}[1]{\vect{L}^{#1}}
+
+\newcommand{\Ldisc}[2]{#1,#2}
+\newcommand{\Real}{{\mathbb{R}}}
+\newcommand{\Poly}{{\mathbb{P}}}
+\newcommand{\Polyv}[2]{[\Poly_{#1}(#2)]^{3}}
+
+\newcommand{\CSo}[2]{C_{#2}^{_{(#1)}}}
+\newcommand{\CPo}[1]{C_{\textsc{p}}^{_{(#1)}}}
+\newcommand{\CPW}[1]{C_{\textsc{pw}}^{_{(#1)}}}
+\newcommand{\CPoO}[1]{C_{\textsc{p},\Omega}^{_{(#1)}}}
+\newcommand{\PoC}{[ \Poly_0(\cellh) ]^3}
+\newcommand{\HiC}{[H^1(\cellh)]^3}
+\newcommand{\LeO}{[L^4(\Omega)]^3}
+
+\newcommand{\normBV}[1]{\normc{#1}_{\textsc{bv}}}
+
+% Domaine et co-domaine
+\newcommand{\Space}[1]{S_{#1}} % De dimension infinie
+\newcommand{\SpaceGrd}{\Space{\vtxsp}^{\mathrm{g}}(\Omega)}
+\newcommand{\SpaceCurl}{\Space{\edgesp}^{\mathrm{c}}(\Omega)}
+\newcommand{\SpaceDiv}{\Space{\facesp}^{\mathrm{d}}(\Omega)}
+\newcommand{\Spacev}[1]{\vect{S}_{#1}} % De dimension infinie
+\newcommand{\SPol}[1]{P_{#1}} % De dimension finie (espace de polynomes)
+\newcommand{\SPolv}[1]{\vect{P}_{#1}} % De dimension finie (espace de polynomes à valeur vectorielle)
+
+% Norms, scalar products
+\newcommand{\pscont}[2]{\left[ #1,#2 \right]}
+\newcommand{\psdico}[2]{\left[ #1,#2 \right]}%{\left(#1 , #2 \right)}
+%\newcommand{\psdisc}[2]{ \big[ \negmedspace \big[ #1,#2 \big] \negmedspace \big] } % original
+%\newcommand{\psdisc}[2]{ \ldbrack #1,#2 \rdbrack } % new % ldbrack Needs mathbx which causes problems
+\newcommand{\psdisc}[2]{ \llbracket #1,#2 \rrbracket } % new
+\newcommand{\proddual}[2]{\left\langle #1,\, #2 \right\rangle}
+\newcommand{\normc}[1]{\lvert\!\lvert #1 \rvert\!\rvert}
+\newcommand{\normd}[1]{\lvert\!\lvert\!\vert #1 \rvert\!\rvert\!\rvert}
+%\newcommand{\jump}[1]{ \ldbrack #1 \rdbrack } % new % ldbrack Needs mathbx which causes problems
+\newcommand{\jump}[1]{ \llbracket #1 \rrbracket } % new
+
+%
+% Analysis of numerical results
+%
+\newcommand{\rate}{\mathrm{\textsc{r}}}
+\newcommand{\Errd}[1]{\mathbf{Er}_{#1}}
+\newcommand{\Errc}[1]{Er_{#1}}
+\newcommand{\nsys}{\mathrm{n_{\textsc{s}ys}}}
+\newcommand{\nite}{\mathrm{n_{\textsc{i}te}}}
+\newcommand{\nnz}{\mathrm{\textsc{nnz}}}
+\newcommand{\CompCo}{\boldsymbol{\chi}}
+\newcommand{\CompCoR}{\boldsymbol{\chi}_{\mathrm{\textsc{r}el}}}
+\newcommand{\stencil}{\mathrm{St}}
+%
+\newcommand{\Hex}{\texttt{Hex}\@\xspace}
+\newcommand{\PrT}{\texttt{PrT}\@\xspace}
+\newcommand{\PrG}{\texttt{PrG}\@\xspace}
+\newcommand{\CB}{\texttt{CB}\@\xspace}
+\newcommand{\K}{\texttt{Ker}\@\xspace}
+%
+%=======================
+% Macros for environment
+%=======================
+% Equations
+\newcommand{\eq}[1]{\begin{equation} #1 \end{equation}}
+\newcommand{\eqn}[1]{\begin{equation*} #1 \end{equation*}}
+\newcommand{\eqb}[1]{\begin{equation}\boxed{ #1 }\end{equation}}
+\newcommand{\eqnb}[1]{\begin{equation*}\boxed{ #1 }\end{equation*}}
+%
+% Figure
+%
+\newcommand{\Figure}[4]{%
+\begin{figure}[#1]
+\centering
+\includegraphics[width=#2\textwidth]{#3}
+\caption{#4}
+\end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                   SECTION: MR MACROS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Miscellaneous
+\newcommand{\bO}[1]{\ensuremath{\mathcal{O}\left(#1\right)}}
+% Vector, hybrid, dual
+\newcommand{\dsc}{\ensuremath{\mathrm{h}}}
+\newcommand{\dual}[1]{\ensuremath{\widetilde{#1}}}
+\newcommand{\hyb}[1]{\ensuremath{\widehat{#1}}}
+\newcommand{\vct}[1]{\ensuremath{\underline{#1}}}
+\newcommand{\tens}[1]{\ensuremath{\underline{\underline{#1}}}}
+\newcommand{\hybv}[1]{\ensuremath{\widehat{\vct{#1}}}}
+\newcommand{\hVex}{\ensuremath{\hyb{\Vex}}}
+\newcommand{\hVtest}{\ensuremath{\hyb{\Vtest}}}
+% Frequently used variables modifiers
+%\newcommand{\ut}{\ensuremath{\tilde{u}}}
+%\newcommand{\uh}{\ensuremath{\hat{u}}}
+% Time discretisation
+\newcommand{\np}[1][n+1]{^{#1}}
+\newcommand{\nm}[1][n-1]{^{#1}}
+\newcommand{\deltat}{\Delta t} %\tau
+% Iterations
+\newcommand{\kp}[1][k+1]{_{#1}}
+\newcommand{\km}[1][k-1]{_{#1}}
+% Geometry
+\newcommand{\meas}[1]{\ensuremath{\left\lvert #1\right\rvert}}
+\newcommand{\ifc}{\ensuremath{\incid{\face}{\cell}}}
+\newcommand{\nf}{\ensuremath{\norma{\face}}}
+\newcommand{\nfc}{\ensuremath{\norma{\face\cell}}}
+\newcommand{\restr}[1]{{}_{\lvert #1}}
+% Sets shortcuts
+\newcommand{\Fc}{\ensuremath{\faceh_{\cell}}}
+\newcommand{\finf}{\ensuremath{\face \in \Fc}}
+\newcommand{\finh}{\ensuremath{\face \in \faceh}}
+\newcommand{\cinc}{\ensuremath{\cell \in \cellh}}
+\newcommand{\cinf}{\ensuremath{\cell \in \cellh_{\face}}}
+\newcommand{\uc}{\ensuremath{_{\cell}}}
+\newcommand{\uf}{\ensuremath{_{\face}}}
+\newcommand{\ud}{\ensuremath{_{\dsc}}}
+\newcommand{\uh}{\ensuremath{\ud}}
+% Discrete settings
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Pk}[1][k]{\ensuremath{\mathbb{P}^{#1}}}
+% % Spaces
+% % % Hybrid, pressure-velocity
+\newcommand{\vsp}{\ensuremath{\mathcal{U}}}
+\newcommand{\vvsp}{\ensuremath{\vct{\vsp}}}         % Vectorial Cell   Velocity Space
+\newcommand{\hvsp}{\ensuremath{\hybv{\vsp}}}        %           Hybrid
+\newcommand{\spsp}{\ensuremath{\mathcal{P}}}        % Scalar    (Cell) Pressure Space
+% % % Original CDO spaces
+\newcommand{\psp}[1]{\ensuremath{\mathcal{#1}}}             % Primal CDO Spaces
+\newcommand{\dsp}[1]{\ensuremath{\dual{\mathcal{#1}}}}      %   Dual CDO Spaces
+% % Reductions / de Rahm maps
+% % % Hybrid, velocity
+\newcommand{\prj}{\pi}
+%\newcommand{\red}{\ensuremath{\mathsf{R}}}
+\newcommand{\red}{\ensuremath{\prj}}
+\newcommand{\Red}[1]{\ensuremath{\red_{#1}}}
+\newcommand{\vRed}[1]{\ensuremath{\vct{\red}_{#1}}}
+\newcommand{\Redc}{\ensuremath{\vRed{\cell}}}
+\newcommand{\Redf}{\ensuremath{\vRed{\face}}}
+\newcommand{\Redh}{\ensuremath{\hybv{\red}_{\cell}}}
+\newcommand{\Redg}{\ensuremath{\hybv{\red}_{\dsc}}}
+% % % Pressure
+\newcommand{\Redp}{\ensuremath{\Red{\cell}}}
+\newcommand{\Redph}{\ensuremath{\Red{\dsc}}}
+% Differential operators
+% % Continuous
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\ddt}[1]{\pd{#1}{t}}
+\newcommand{\dive}{\ensuremath{\vct{\nabla}\cdot}}
+\newcommand{\grad}{\ensuremath{\vct{\nabla}\,}}
+\newcommand{\rot}{\ensuremath{\vct{\nabla}\times}}
+\newcommand{\graddiv}{\ensuremath{\grad\dive}}
+\newcommand{\lapl}{\ensuremath{\vct{\Delta}\,}}
+% % Discrete / CDO
+\newcommand{\dddt}[1]{\frac{#1^{n+1}-#1^{n}}{\deltat}}
+\newcommand{\dddtp}[1]{\frac{#1^{n+1}-#1^{n}}{\deltat}}
+\newcommand{\dddtm}[1]{\frac{#1^{n}-#1^{n-1}}{\deltat}}
+\newcommand{\Gh}{\ensuremath{\mathrm{G}}}%{\ensuremath{\dual{\mathrm{G}}^{H}_{\cell}\,}}
+\newcommand{\vGh}{\ensuremath{\vct{\Gh}}}%{\ensuremath{\dual{\vct{\mathrm{G}}}^{H}_{\cell}\,}}
+\newcommand{\tGh}{\ensuremath{\tens{\Gh}}}%{\ensuremath{\dual{\tens{\mathrm{G}}}^{H}_{\cell}\,}}
+\newcommand{\Dh}{\ensuremath{\mathrm{D}}}%{\ensuremath{\mathrm{D}^{H}_{\cell}\,}}}
+\newcommand{\Dhh}{\ensuremath{\mathrm{D}_{\cellsp}}}%{\ensuremath{\mathrm{D}^{H}_{\cellsp}\,}}}
+% Scalar, inner, duality products, norms
+\newcommand{\abs}[1]{\ensuremath{\left\lvert #1\right\rvert}} % Same as \meas
+\newcommand{\nrm}[1]{\ensuremath{\left\lVert #1\right\rVert}}
+\newcommand{\dsb}[2]{\ensuremath{\llbracket #1,\,#2 \rrbracket}} % Double square brackets
+%
+\endinput

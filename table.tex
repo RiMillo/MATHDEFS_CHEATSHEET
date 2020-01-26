@@ -1,0 +1,498 @@
+%! TEX root = cheat_sheet.tex
+
+$\vect{u}$ & 1 & \verb|\vect{u}| & \verb|\underline{#1}| \\
+$ \tensor{A} $ & 1 & \verb|\tensor{A}| & \verb|\underline{\underline{#1}}| \\
+$ \mesure{c} $ & 1 & \verb|\mesure{c}| & \verb|\lvert #1 \rvert| \\
+$ \tange{e} $ & 1 & \verb|\tange{e}| & \verb|\vect{\tau}_{#1}| \\
+$ \norm $ & 0 & \verb|\norm| & \verb|\vect{\nu}| \\
+$ \norma{f} $ & 1 & \verb|\norma{f}| & \verb|\norm_{#1}| \\
+$ \incid{f}{c} $ & 2 & \verb|\incid{f}{c}| & \verb|\iota{#1,#2}| \\
+$ \mean{g} $ & 1 & \verb|\mean{g}| & \verb|\overline{#1}| \\
+$ \zmean $ & 0 & \verb|\zmean| & \verb|\perp\mathbf{1}| \\
+$ \integ{c} $ & 1 & \verb|\integ{c}| & \verb|\int\limits_{#1}| \\
+$ \twistm{E} $ & 1 & \verb|\twistm{E}| & \verb|\tilde{#1}| \\
+$ \twist{E} $ & 1 & \verb|\twist{E}| & \verb|\widetilde{E}| \\
+$ \transpose{M} $ & 1 & \verb|\transpose{M}| & \verb|{#1}^{\textsc{t}}| \\
+$ \dif $ & 0 & \verb|\dif| & \verb|\,\mathrm{d}| \\
+$ \Leq $ & 0 & \verb|\Leq| & \verb|\lesssim| \\
+$ \pond{c} $ & 1 & \verb|\pond{c}| & \verb|\varphi_{#1}| \\
+$ a\usc{Be} $  & 1 & \verb|a\usc{Bc}| & \verb|^{\textsc{#1}}| \\
+$ \EB $ & 0 & \verb|\EB| & \verb|\mathrm{EB}| \\
+\multicolumn{4}{c}{\bfseries Sets}\\
+\hline
+$ \tq $ & 0 & \verb|\tq| & \verb!\,|\,! \\
+$ \Set{u_n} $ & 1 & \verb|\Set{u_n}| & \verb|\lbrace #1 \rbrace| \\
+$ \Factor{v_n} $ & 1 & \verb|\Factor{u_n}| & \verb|\left( #1 \right)| \\
+$ \Factorb{w_n} $ & 1 & \verb|\Factorb{w_n}| & \verb|\left[ #1 \right]| \\
+$ \ar{u}{v}{w} $ & 3 & \verb|\ar{u}{v}{w}| & \verb|\begin{bmatrix} #1 \\ #2 \\ #3 \end{bmatrix}| \\
+\hline
+$ \Ddi $ & 0 & \verb|\Ddi| & \verb|\boldsymbol{\delta}| \\
+$ \In $ & 0 & \verb|\In| & \verb|\mathrm{\textsc{i}}| \\
+$ \Bd $ & 0 & \verb|\Bd| & \verb|\mathrm{\textsc{b}}| \\
+$ \pb $ & 0 & \verb|\pb| & \verb|\mathrm{pb}| \\
+$ \bc $ & 0 & \verb|\bc| & \verb|\mathrm{bc}| \\
+$ \harm $ & 0 & \verb|\harm| & \verb|\mathsf{h}| \\
+$ \vb $ & 0 & \verb|\vb| & \verb|\mathsf{vb}| \\
+$ \cb $ & 0 & \verb|\cb| & \verb|\mathsf{cb}| \\
+$ \pOm $ & 0 & \verb|\pOm| & \verb|\partial\Omega| \\
+$ \closure $ & 0 & \verb|\closure| & \verb|\overline{\partial}| \\
+\hline
+$ \rhs $ & 0 & \verb|\rhs| & \verb|\mathsf{RHS}| \\
+$ \mom $ & 0 & \verb|\mom| & \verb|\mathsf{mom}| \\
+$ \mas $ & 0 & \verb|\mas| & \verb|\mathsf{mas}| \\
+$ \vor $ & 0 & \verb|\vor| & \verb|\mathsf{vor}| \\
+$ \BC $ & 0 & \verb|\BC| & \verb|\mathsf{B \! C}| \\
+$ \Src $ & 0 & \verb|\Src| & \verb|\mathsf{S}| \\
+$ \SrcP $ & 0 & \verb|\SrcP| & \verb|\Src_{\mathsf{p}}| \\
+$ \SrcD $ & 0 & \verb|\SrcD| & \verb|\Src_{\mathsf{d}}| \\
+\multicolumn{4}{c}{\bfseries Variables}\\
+\multicolumn{4}{l}{Continuous Setting}\\
+\hline
+$\Oex$ & 0 & \verb|\Oex| & \verb|\mathrm{1}| \\
+$\Vit$ & 0 & \verb|\Vit| & \verb|u| \\
+$\Vex$ & 0 & \verb|\Vex| & \verb|\vect{\Vit}| \\
+$\Vort$ & 0 & \verb|\Vort| & \verb|\omega| \\
+$\Wex$ & 0 & \verb|\Wex| & \verb|\vect{\Vort}| \\
+$\Pex$ & 0 & \verb|\Pex| & \verb|p| \\
+$\Gex$ & 0 & \verb|\Gex| & \verb|\vect{g}| \\
+$\Gdual$ & 0 & \verb|\Gdual| & \verb|\Gex^\zeta| \\
+$\Fex$ & 0 & \verb|\Fex| & \verb|\vect{\phi}| \\
+$\Fdual$ & 0 & \verb|\Fdual| & \verb|\vect{\phi}^\zeta| \\
+$\Sex$ & 0 & \verb|\Sex| & \verb|s| \\
+$\Wsex$ & 0 & \verb|\Wsex| & \verb|\vect{\Vort}^{\ast}| \\
+$\Wsdi$ & 0 & \verb|\Wsdi| & \verb|\Wdi^{\ast}| \\
+$\Psex$ & 0 & \verb|\Psex| & \verb|\Pex^{\ast}| \\
+$\Foex$ & 0 & \verb|\Foex| & \verb|\vect{f}| \\
+$\Fosex$ & 0 & \verb|\Fosex| & \verb|\vect{f}^{\ast}| \\
+$\Posex$ & 0 & \verb|\Posex| & \verb|\theta| \\
+$\Povex$ & 0 & \verb|\Povex| & \verb|\vect{\psi}| \\
+$\Vtest $ & 0 & \verb|\Vtest| & \verb|\vect{v}| \\ %
+$\Ptest $ & 0 & \verb|\Ptest| & \verb|q| \\ %
+\multicolumn{4}{l}{Discrete Setting}\\
+\hline
+$\Odi$ & 0 & \verb|\Odi| & \verb|\boldsymbol{1}| \\
+$\Vdi$ & 0 & \verb|\Vdi| & \verb|\mathbf{\Vit}| \\
+$\Wdi$ & 0 & \verb|\Wdi| & \verb|\boldsymbol{\Vort}| \\
+$\Pdi$ & 0 & \verb|\Pdi| & \verb|\mathbf{\Pex}| \\
+$\Psdi$ & 0 & \verb|\Psdi| & \verb|\Pdi^{\ast}| \\
+$\Gdi$ & 0 & \verb|\Gdi| & \verb|\mathbf{g}| \\
+$\Fdi$ & 0 & \verb|\Fdi| & \verb|\boldsymbol{\phi}| \\
+$\Sdi$ & 0 & \verb|\Sdi| & \verb|\mathbf{\Sex}| \\
+$\Sgdi$ & 0 & \verb|\Sgdi| & \verb|\boldsymbol{\sigma}| \\
+$\Fodi$ & 0 & \verb|\Fodi| & \verb|\mathbf{f}| \\
+$\Posdi$ & 0 & \verb|\Posdi| & \verb|\boldsymbol{\theta}| \\
+$\Povdi$ & 0 & \verb|\Povdi| & \verb|\boldsymbol{\psi}| \\
+$\Taudi$ & 0 & \verb|\Taudi| & \verb|\boldsymbol{\tau}| \\
+$\Xdi$ & 0 & \verb|\Xdi| & \verb|\mathbf{x}| \\
+$\Ydi$ & 0 & \verb|\Ydi| & \verb|\mathbf{y}| \\
+\multicolumn{4}{l}{Auxiliary Variables}\\
+\hline
+$\Adi$ & 0 & \verb|\Adi| & \verb|\mathbf{a}| \\
+$\Bdi$ & 0 & \verb|\Bdi| & \verb|\mathbf{b}| \\
+$\Qdi$ & 0 & \verb|\Qdi| & \verb|\mathbf{q}| \\
+$\Vvdi$ & 0 & \verb|\Vvdi| & \verb|\mathbf{w}| \\
+$\Zdi$ & 0 & \verb|\Zdi| & \verb|\boldsymbol{\zeta}| \\
+\multicolumn{4}{l}{Phenomenological parameters}\\
+\hline
+$\rhop$ & 0 & \verb|\rhop| & \verb|(\rho)| \\
+$\rhom$ & 0 & \verb|\rhom| & \verb|\rho^{{\scriptscriptstyle -1}}| \\
+$\rhomp$ & 0 & \verb|\rhomp| & \verb|(\rho)^{{\scriptscriptstyle -1}}| \\
+$\Visc$ & 0 & \verb|\Visc| & \verb|\mu| \\
+$\Viscp$ & 0 & \verb|\Viscp| & \verb|(\Visc)| \\
+$\Viscm$ & 0 & \verb|\Viscm| & \verb|\Visc^{{\scriptscriptstyle -1}}| \\
+$\Viscpm$ & 0 & \verb|\Viscpm| & \verb|(\Visc)^{{\scriptscriptstyle -1}}| \\
+$\CondTh$ & 0 & \verb|\CondTh| & \verb|\kappa| \\
+$\CondThp$ & 0 & \verb|\CondThp| & \verb|(\CondTh)| \\
+$\CondThm$ & 0 & \verb|\CondThm| & \verb|\CondTh^{{\scriptscriptstyle -1}}| \\
+$\CondThpm$ & 0 & \verb|\CondThpm| & \verb|(\CondTh)^{{\scriptscriptstyle -1}}| \\
+$\TeTh$ & 0 & \verb|\TeTh| & \verb|\tensor{\CondTh}| \\
+$\TeThav$ & 0 & \verb|\TeThav| & \verb|\tensor{\widehat \CondTh}| \\
+$\alpham$ & 0 & \verb|\alpham| & \verb|\alpha^{{\scriptscriptstyle -1}}| \\
+$\alphap$ & 0 & \verb|\alphap| & \verb|(\alpha)| \\
+$\alphapm$ & 0 & \verb|\alphapm| & \verb|(\alpha)^{{\scriptscriptstyle -1}}| \\
+%=======================
+% Mesh entities (also called chain spaces)
+%=======================
+\multicolumn{4}{c}{\bfseries Mesh-related}\\
+\multicolumn{4}{l}{Mesh entities (aka chain spaces)}\\
+\hline
+$\vtx$ & 0 & \verb|\vtx| & \verb|\mathrm{v}| \\
+$\edge$ & 0 & \verb|\edge| & \verb|\mathrm{e}|\\%
+$\face$ & 0 & \verb|\face| & \verb|\mathrm{f}|\\%
+$\cell$ & 0 & \verb|\cell| & \verb|\mathrm{c}|\\%
+$\x$ & 0 & \verb|\x| & \verb|\mathrm{x}|\\%
+\hline
+$\vtxd$ & 0 & \verb|\vtxd| & \verb|\twistm{\vtx}|\\%
+$\edged$ & 0 & \verb|\edged| & \verb|\twistm{\edge}|\\%
+$\faced$ & 0 & \verb|\faced| & \verb|\twistm{\face}|\\%
+$\celld$ & 0 & \verb|\celld| & \verb|\twistm{\cell}|\\%
+$\yd$ & 0 & \verb|\yd| & \verb|\twistm{\mathrm{y}}|\\%
+$\Kd$ & 0 & \verb|\Kd| & \verb|\twist{K}|\\%
+\hline
+$\pt$ & 0 & \verb|\pt| & \verb|\vect{x}|\\%
+$\nent{f}{c}$ & 2 & \verb|\nent{f,c}| & \verb|\mathrm{n}_{#1,#2}}|\\%
+$\edgev$ & 0 & \verb|\edgev| & \verb|\vect{\edge}|\\%
+$\edgedv$ & 0 & \verb|\edgedv| & \verb|\vect{\edged}|\\%
+$\facev$ & 0 & \verb|\facev| & \verb|\vect{\face}|\\%
+$\facedv$ & 0 & \verb|\facedv| & \verb|\vect{\faced}|\\%
+% Set of mesh entities
+\multicolumn{4}{l}{Sets of mesh entities}\\
+\hline
+$\Mesh$ & 0 & \verb|\Mesh| & \verb|\mathrm{M}|\\%
+$\xh$ & 0 & \verb|\xh| & \verb|\mathrm{X}|\\%
+$\vtxh$ & 0 & \verb|\vtxh| & \verb|\mathrm{V}|\\%
+$\edgeh$ & 0 & \verb|\edgeh| & \verb|\mathrm{E}|\\%
+$\faceh$ & 0 & \verb|\faceh| & \verb|\mathrm{F}|\\%
+$\cellh$ & 0 & \verb|\cellh| & \verb|\mathrm{C}|\\%
+\hline
+$\Meshd$ & 0 & \verb|\Meshd| & \verb|\twist{\Mesh}|\\%
+$\yhd$ & 0 & \verb|\yhd| & \verb|\twist{\mathrm{Y}}|\\%
+$\vtxhd$ & 0 & \verb|\vtxhd| & \verb|\twist{\vtxh}|\\%
+$\edgehd$ & 0 & \verb|\edgehd| & \verb|\twist{\edgeh}|\\%
+$\facehd$ & 0 & \verb|\facehd| & \verb|\twist{\faceh}|\\%
+$\cellhd$ & 0 & \verb|\cellhd| & \verb|\twist{\cellh}|\\%
+\multicolumn{4}{l}{Sub-meshes}\\
+\hline
+$\svol$ & 0 & \verb|\svol| & \verb|\mathfrak{s}|\\%
+$ \Svol{f} $ & 1 & \verb|\Svol{f}| & \verb|\svol^{\textsc{#1}}| \\
+$\Smesh$ & 0 & \verb|\Smesh| & \verb|\mathfrak{S}|\\%
+$\pvol$ & 0 & \verb|\pvol| & \verb|\mathfrak{p}|\\%
+$\Pvol$ & 0 & \verb|\Pvol| & \verb|\mathfrak{P}|\\%
+$ \Part{f} $ & 1 & \verb|\Part{f}| & \verb|\Pvol_{#1}| \\
+$\tef$ & 0 & \verb|\tef| & \verb|\mathfrak{t}_{\edge\face}|\\%
+$\pef$ & 0 & \verb|\pef| & \verb|\pvol_{\edge\face,\cell}|\\%
+$\pfc$ & 0 & \verb|\pfc| & \verb|\pvol_{\face,\cell}|\\%
+\hline
+%
+$\frakc$ & 0 & \verb|\frakc| & \verb|\mathfrak{c}|\\%
+$\frakt$ & 0 & \verb|\frakt| & \verb|\mathfrak{t}|\\%
+$\frake$ & 0 & \verb|\frake| & \verb|\mathfrak{e}|\\%
+$\frakv$ & 0 & \verb|\frakv| & \verb|\mathfrak{v}|\\%
+$\frakC$ & 0 & \verb|\frakC| & \verb|\mathfrak{C}|\\%
+$\frakT$ & 0 & \verb|\frakT| & \verb|\mathfrak{T}|\\%
+$\frakE$ & 0 & \verb|\frakE| & \verb|\mathfrak{E}|\\%
+$\frakV$ & 0 & \verb|\frakV| & \verb|\mathfrak{V}|\\%
+\hline
+%
+$\Step$ & 0 & \verb|\Step| & \verb|h|\\%
+$\StepMesh$ & 0 & \verb|\StepMesh| & \verb|\Step_{\scriptscriptstyle{\Mesh}}|\\%
+$\Stepc$ & 0 & \verb|\Stepc| & \verb|\Step_{\cell}|\\%
+\multicolumn{4}{c}{\bfseries DoF spaces (aka cochain spaces)}\\
+\hline
+$ \vtxsp $ & 0 & \verb|\vtxsp| & \verb|\mathcal{V}| \\
+$ \edgesp $ & 0 & \verb|\edgesp| & \verb|\mathcal{E}| \\
+$ \facesp $ & 0 & \verb|\facesp| & \verb|\mathcal{F}| \\
+$ \cellsp $ & 0 & \verb|\cellsp| & \verb|\mathcal{C}| \\
+\hline
+$ \vtxspd $ & 0 & \verb|\vtxspd| & \verb|\twist{\vtxsp}| \\
+$ \edgespd $ & 0 & \verb|\edgespd| & \verb|\twist{\edgesp}| \\
+$ \facespd $ & 0 & \verb|\facespd| & \verb|\twist{\facesp}| \\
+$ \cellspd $ & 0 & \verb|\cellspd| & \verb|\twist{\cellsp}| \\
+$ \xsp $ & 0 & \verb|\xsp| & \verb|\mathcal{X}| \\
+$ \ysp $ & 0 & \verb|\ysp| & \verb|\mathcal{Y}| \\
+$ \yspd $ & 0 & \verb|\yspd| & \verb|\twist{\mathcal{Y}}| \\
+\hline
+$ H^{\PrimalDual{A}{B}} $ & 2 & \begin{tabular}{@{}l} \verb|H^| [\dots]\\ \verb|{\PrimalDual{A}{B}}| \end{tabular}& \begin{tabular}{@{}l}
+  \verb|{\scriptscriptstyle{#1}}{\textstyle| [\dots]\\ \verb|\twistm{{\scriptscriptstyle{#2}}}}|
+\end{tabular}  \\
+$H^{\EpFd} $ & 0 & \verb|H^{\EpFd}| & \verb|\PrimalDual{\edgesp}{\facesp}|\\%
+$H^{\VpCd} $ & 0 & \verb|H^{\VpCd}| & \verb|\PrimalDual{\vtxsp}{\cellsp}|\\%
+$H^{\FpEd} $ & 0 & \verb|H^{\FpEd}| & \verb|\PrimalDual{\facesp}{\edgesp}|\\%
+$H^{\CpVd} $ & 0 & \verb|H^{\CpVd}| & \verb|\PrimalDual{\cellsp}{\vtxsp}|\\%
+$H^{\XpYd} $ & 0 & \verb|H^{\XpYd}| & \verb|\PrimalDual{\xsp}{\ysp}|\\%
+\hline
+$ H^{\DualPrimal{A}{B}} $ & 2 & \begin{tabular}{@{}l} \verb|H^| [\dots]\\ \verb|{\DualPrimal{A}{B}}| \end{tabular} & \begin{tabular}{@{}l}
+  \verb|{\textstyle\twistm{{\scriptscriptstyle{#1}}}}| [\dots]\\ \verb|{\scriptscriptstyle{#2}}|
+\end{tabular}  \\
+$H^{\VdCp} $ & 0 & \verb|H^{\VdCp}| & \verb|\DualPrimal{\vtxsp}{\cellsp}|\\%
+$H^{\EdFp} $ & 0 & \verb|H^{\EdFp}| & \verb|\DualPrimal{\edgesp}{\facesp}|\\%
+$H^{\FdEp} $ & 0 & \verb|H^{\FdEp}| & \verb|\DualPrimal{\facesp}{\edgesp}|\\%
+$H^{\CdVp} $ & 0 & \verb|H^{\CdVp}| & \verb|\DualPrimal{\cellsp}{\vtxsp}|\\%
+$H^{\YdXp} $ & 0 & \verb|H^{\YdXp}| & \verb|\DualPrimal{\ysp}{\xsp}|\\%
+\hline
+$ H^{\PrimalDualSub{A}{B}{c}} $ & 3 & \begin{tabular}{@{}l} \verb|H^{\PrimalDualSub| [\dots]\\ \verb|{A}{B}{c}}| \end{tabular} & \begin{tabular}{@{}l}
+  \verb|{\scriptscriptstyle{#1_{#3}}}{\textstyle| [\dots]\\ \verb|\twistm{{\scriptscriptstyle{#2}}}}|
+\end{tabular}  \\
+$H^{\EpFdc} $ & 0 & \verb|H^{\EpFdc}| & \verb|\PrimalDualSub{\edgesp}{\facesp}{\cell}|\\%
+$H^{\VpCdc} $ & 0 & \verb|H^{\VpCdc}| & \verb|\PrimalDualSub{\vtxsp}{\cellsp}{\cell}|\\%
+$H^{\FpEdc} $ & 0 & \verb|H^{\FpEdc}| & \verb|\PrimalDualSub{\facesp}{\edgesp}{\cell}|\\%
+$H^{\CpVdc} $ & 0 & \verb|H^{\CpVdc}| & \verb|\PrimalDualSub{\cellsp}{\vtxsp}{\cell}|\\%
+$H^{\XpYdc} $ & 0 & \verb|H^{\XpYdc}| & \verb|\PrimalDualSub{\xsp}{\ysp}{\cell}|\\%
+\hline
+$ H^{\DualPrimalSub{A}{B}{c}} $ & 3 & \begin{tabular}{@{}l} \verb|H^{\DualPrimalSub| [\dots]\\ \verb|{A}{B}{c}}| \end{tabular} & \begin{tabular}{@{}l}
+  \verb|{\textstyle\twistm{{\scriptscriptstyle{#1}}}| [\dots]\\ \verb|_{\scriptscriptstyle{#3}}{\scriptscriptstyle{#2}}|
+\end{tabular}  \\
+$H^{\FdEpc} $ & 0 & \verb|H^{\FdEpc}| & \verb|\DualPrimalSub{\facesp}{\edgesp}{\cell}|\\%
+$H^{\EdFpc} $ & 0 & \verb|H^{\EdFpc}| & \verb|\DualPrimalSub{\edgesp}{\facesp}{\cell}|\\%
+$H^{\YdXpc} $ & 0 & \verb|H^{\YdXpc}| & \verb|\DualPrimalSub{\ysp}{\xsp}{\cell}|\\%
+\multicolumn{4}{c}{\bfseries Operators}\\
+\hline
+$ \Ker $ & 0 & \verb|\Ker| & \verb|\operatorname{Ker}| \\
+$ \Ran $ & 0 & \verb|\Ran| & \verb|\operatorname{Im}| \\
+$ \Harm{u} $ & 1 & \verb|\Harm{u}| & \verb|\operatorname{Harm}#1| \\
+$ \ima $ & 0 & \verb|\ima| & \verb|\DeclareMathOperator{\ima}{im}|\\
+$ \trace $ & 0 & \verb|\trace| & \verb|\DeclareMathOperator{\trace}{tr}|\\
+$ \card $ & 0 & \verb|\card| & \verb|\DeclareMathOperator{\card}{card}|\\
+$ \domain $ & 0 & \verb|\domain| & \verb|\DeclareMathOperator{\domain}{domain}|\\
+$ \diag $ & 0 & \verb|\diag| & \verb|\DeclareMathOperator{\diag}{diag}|\\
+$ \grd $ & 0 & \verb|\grd| & \verb|\DeclareMathOperator{\grd}{\vect{grad}}|\\
+$ \divm $ & 0 & \verb|\divm| & \verb|\DeclareMathOperator{\divm}{div}|\\
+$ \curl $ & 0 & \verb|\curl| & \verb|\DeclareMathOperator{\curl}{\vect{curl}}|\\
+$ \grdt $ & 0 & \verb|\grdt| & \begin{tabular}{@{}l} \verb|\DeclareMathOperator{\grdt}| [\dots]\\ \verb|{\tensor{\mathrm{grad}}}| \end{tabular}\\
+$ \divv $ & 0 & \verb|\divv| & \verb|\DeclareMathOperator{\divv}{\vect{div}}|\\
+$ \lapvec $ & 0 & \verb|\lapvec| & \verb|\DeclareMathOperator{\lapvec}{\vect{\Delta}}|\\
+\multicolumn{4}{l}{Discrete Operators}\\
+\hline
+$ \opid $ & 0 & \verb|\opid| & \verb|\mathsf{Id}| \\
+$ \TeId $ & 0 & \verb|\TeId| & \verb|\tensor{\opid}| \\
+\multicolumn{4}{l}{Discrete Differential Operators}\\
+\hline
+$ \opgrad $ & 0 & \verb|\opgrad| & \verb|\mathsf{GRAD}| \\
+$ \opdiv $ & 0 & \verb|\opdiv| & \verb|\mathsf{DIV}| \\
+$ \opcurl $ & 0 & \verb|\opcurl| & \verb|\mathsf{CURL}| \\
+$ \opgradd $ & 0 & \verb|\opgradd| & \verb|\twist{\opgrad}| \\
+$ \opdivd $ & 0 & \verb|\opdivd| & \verb|\twist{\opdiv}| \\
+$ \opcurld $ & 0 & \verb|\opcurld| & \verb|\twist{\opcurl}| \\
+\multicolumn{4}{l}{Reductions aka deRham maps}\\
+\hline
+$ \opred $ & 0 & \verb|\opred| & \verb|\mathsf{R}| \\
+$ \opRed{F} $ & 1 & \verb|\opRed{F}| & \verb|\opred_{#1}| \\
+\multicolumn{4}{l}{Projection maps}\\
+\hline
+$ \opproj $ & 0 & \verb|\opproj| & \verb|\mathsf{T}| \\
+$ \opProj{F} $ & 1 & \verb|\opProj{F}| & \verb|\opproj_{#1}| \\
+$ \PVc $ & 0 & \verb|\PVc| & \verb|\opProj{\vtxsp,\cell}| \\
+$ \PEc $ & 0 & \verb|\PEc| & \verb|\opProj{\edgesp,\cell}| \\
+$ \PFc $ & 0 & \verb|\PFc| & \verb|\opProj{\facesp,\cell}| \\
+\hline
+$ \optrans $ & 0 & \verb|\optrans| & \verb|\mathsf{T}| \\
+$ \opT{u} $ & 1 & \verb|\opT{u}| & \verb|\optrans_{#1}| \\
+\multicolumn{4}{l}{Hodge operators}\\
+\hline
+$ \opHodge $ & 0 & \verb|\opHodge| & \verb|\mathsf{H}| \\
+$ \opHodgec $ & 0 & \verb|\opHodgec| & \verb|\hat{\opHodge}| \\
+$ \opHodgeFull{A}{E}{F} $ & 3 & \begin{tabular}{@{}l} \verb|\opHodgeFull| [\dots]\\ \verb|{A}{E}{F}| \end{tabular}& \verb|\opHodge_{#1}^{\scriptscriptstyle{#2 #3}}| \\
+$ \Hperp $ & 0 & \verb|\Hperp| & \verb|\perp\opHodge| \\
+\multicolumn{4}{l}{Reconstruction operators}\\
+\hline
+$ \conf $ & 0 & \verb|\conf| & \verb|{\rm conf}| \\
+\hline
+$ \oprec $ & 0 & \verb|\oprec| & \verb|\mathtt{L}| \\
+$ \opcrec $ & 0 & \verb|\opcrec| & \verb|\mathtt{C}| \\
+$ \opsrec $ & 0 & \verb|\opsrec| & \verb|\mathtt{S}| \\
+$ \opRec{E} $ & 1 & \verb|\opRec{E}| & \verb|\oprec_{#1}| \\
+$ \opReco{E} $ & 1 & \verb|\opReco{E}| & \verb|\oprec_{#1}| \\
+$ \opCRec{E} $ & 1 & \verb|\opCRec{E}| & \verb|\opcrec_{#1}| \\
+$ \opSRec{E} $ & 1 & \verb|\opSRec{E}| & \verb|\opsrec_{#1}| \\
+$ \opShRec{E} $ & 1 & \verb|\opShRec{E}| & \verb|\hat{\opsrec}_{#1}| \\
+$ \opRecv{E} $ & 1 & \verb|\opRecv{E}| & \verb|\vect{\oprec}_{#1}| \\
+$ \opCRecv{E} $ & 1 & \verb|\opCRecv{E}| & \verb|\vect{\opcrec}_{#1}| \\
+$ \opSRecv{E} $ & 1 & \verb|\opSRecv{E}| & \verb|\vect{\opsrec}_{#1}| \\
+$ \opShRecv{E} $ & 1 & \verb|\opShRecv{E}| & \verb|\hat{\vect{\opsrec}}_{#1}| \\
+\multicolumn{4}{l}{Reconstruction functions}\\
+\hline
+$ \freco $ & 0 & \verb|\freco| & \verb|\ell| \\
+$ \frecov $ & 0 & \verb|\frecov| & \verb|\vect{\freco}| \\
+$ \Freco{a}{b} $ & 2 & \verb|\Freco{a}{b}| & \verb|\freco_{#1}^{\textsc{#2}}| \\
+$ \Frecov{a}{b} $ & 2 & \verb|\Frecov{a}{b}| & \verb|\frecov_{#1}^{\textsc{#2}}| \\
+$ \frecoc $ & 0 & \verb|\frecoc| & \verb|\freco^\conf| \\
+$ \frecovc $ & 0 & \verb|\frecovc| & \verb|\frecov^\conf| \\
+$ \fform $ & 0 & \verb|\fform| & \verb|\varphi| \\
+$ \Fform{E} $ & 1 & \verb|\Fform{E}| & \verb|\fform^{\textsc{#1}}| \\
+$ \Fformv{E} $ & 1 & \verb|\Fformv{E}| & \verb|\vect{\fform}^{\textsc{#1}}| \\
+\multicolumn{4}{l}{Approximation maps}\\
+\hline
+$ \opapx $ & 0 & \verb|\opapx| & \verb|\mathtt{A}| \\
+$ \opapxv $ & 0 & \verb|\opapxv| & \verb|\vect{\opapx}| \\
+$ \opApx{E} $ & 1 & \verb|\opApx{E}| & \verb|\opapx_{#1}| \\
+$ \opApxv{E} $ & 1 & \verb|\opApxv{E}| & \verb|\opapxv_{#1}| \\
+\hline
+$ \Commut{A}{B} $ & 2 & \verb|\Commut{A}{B}| & \verb|\lfloor #1, \, #2 \rceil| \\
+\multicolumn{4}{l}{Generic operators}\\
+\hline
+$ \opA $ & 0 & \verb|\opA| & \verb|\mathsf{A}| \\
+$ \opB $ & 0 & \verb|\opB| & \verb|\mathsf{B}| \\
+$ \opC $ & 0 & \verb|\opC| & \verb|\mathsf{C}| \\
+$ \opD $ & 0 & \verb|\opD| & \verb|\mathsf{D}| \\
+$ \opBt $ & 0 & \verb|\opBt| & \verb|\transpose{\opB}| \\
+$ \opCt $ & 0 & \verb|\opCt| & \verb|\transpose{\opC}| \\
+$ \opDt $ & 0 & \verb|\opDt| & \verb|\transpose{\opD}| \\
+\multicolumn{4}{c}{\bfseries Stokes}\\
+\hline
+$ \Wt $ & 0 & \verb|\Wt| & \verb|\Wex_{\tau}^{\bc}| \\
+$ \Un $ & 0 & \verb|\Un| & \verb|\Vit_\nu^{\bc}| \\
+$ \Ut $ & 0 & \verb|\Ut| & \verb|\Vex_\tau^{\bc}| \\
+$ \Pbc $ & 0 & \verb|\Pbc| & \verb|\Pex^{\bc}| \\
+ \UnWt  & 0 & \verb|\UnWt| & \verb|\textbf{(UnWt)}\@\xspace| \\
+ \UtPr  & 0 & \verb|\UtPr| & \verb|\textbf{(UtPr)}\@\xspace| \\
+ %\PL  & 0 & \verb|\PL| & \verb|\cblue{(PL)}\@\xspace| \\
+ %\DL  & 0 & \verb|\DL| & \verb|\cred{(DL)}\@\xspace| \\
+\multicolumn{4}{c}{\bfseries Functional Analysis}\\
+\hline
+$ \Hcurl{p} $ & 1 & \verb|\Hcurl{p}| & \verb|H(\vect{\rm curl};#1)| \\
+$ \Hdiv{p} $ & 1 & \verb|\Hdiv{p}| & \verb|H({\rm div};#1)| \\
+$ \Hilbert{p} $ & 1 & \verb|\Hilbert{p}| & \verb|H^{#1}| \\
+$ \Sobolev{p}{q} $ & 2 & \verb|\Sobolev{p}{q}| & \verb|W^{#1,#2}| \\
+$ \Lebesgue{p} $ & 1 & \verb|\Lebesgue{p}| & \verb|L^{#1}| \\
+$ \Hilbertv{p} $ & 1 & \verb|\Hilbertv{p}| & \verb|\vect{H}^{#1}| \\
+$ \Sobolevv{p}{q} $ & 2 & \verb|\Sobolevv{p}{q}| & \verb|\vect{W}^{#1,#2}| \\
+$ \Lebesguev{p} $ & 1 & \verb|\Lebesguev{p}| & \verb|\vect{L}^{#1}| \\
+\hline
+$ \Ldisc{A}{B} $ & 2 & \verb|\Ldisc{A}{B}| & \verb|#1,#2| \\
+$ \Real $ & 0 & \verb|\Real| & \verb|{\mathbb{R}}| \\
+$ \Poly $ & 0 & \verb|\Poly| & \verb|{\mathbb{P}}| \\
+$ \Polyv{k}{C} $ & 2 & \verb|\Polyv{k}{C}| & \verb|[\Poly_{#1}(#2)]^{3}| \\
+\hline
+$ \CSo{A}{B} $ & 2 & \verb|\CSo{A}{B}| & \verb|C_{#2}^{_{(#1)}}| \\
+$ \CPo{u} $ & 1 & \verb|\CPo{u}| & \verb|C_{\textsc{p}}^{_{(#1)}}| \\
+$ \CPW{u} $ & 1 & \verb|\CPW{u}| & \verb|C_{\textsc{pw}}^{_{(#1)}}| \\
+$ \CPoO{u} $ & 1 & \verb|\CPoO{u}| & \verb|C_{\textsc{p},\Omega}^{_{(#1)}}| \\
+$ \PoC $ & 0 & \verb|\PoC| & \verb|[ \Poly_0(\cellh) ]^3| \\
+$ \HiC $ & 0 & \verb|\HiC| & \verb|[H^1(\cellh)]^3| \\
+$ \LeO $ & 0 & \verb|\LeO| & \verb|[L^4(\Omega)]^3| \\
+\hline
+$ \normBV{u} $ & 1 & \verb|\normBV{u}| & \verb|\normc{#1}_{\textsc{bv}}| \\
+\multicolumn{4}{l}{Domaine et co-domaine}\\
+\hline
+$ \Space{E} $ & 1 & \verb|\Space{E}| & \verb|S_{#1}| \\
+$ \SpaceGrd $ & 0 & \verb|\SpaceGrd| & \verb|\Space{\vtxsp}^{\mathrm{g}}(\Omega)| \\
+$ \SpaceCurl $ & 0 & \verb|\SpaceCurl| & \verb|\Space{\edgesp}^{\mathrm{c}}(\Omega)| \\
+$ \SpaceDiv $ & 0 & \verb|\SpaceDiv| & \verb|\Space{\facesp}^{\mathrm{d}}(\Omega)| \\
+$ \Spacev{E} $ & 1 & \verb|\Spacev{E}| & \verb|\vect{S}_{#1}| \\
+$ \SPol{E} $ & 1 & \verb|\SPol{E}| & \verb|P_{#1}| \\
+$ \SPolv{E} $ & 1 & \verb|\SPolv{E}| & \verb|\vect{P}_{#1}| \\
+\multicolumn{4}{l}{Norms, scalar products}\\
+\hline
+$ \pscont{A}{B} $ & 2 & \verb|\pscont{A}{B}| & \verb|\left[ #1,#2 \right]| \\
+$ \psdico{A}{B} $ & 2 & \verb|\psdico{A}{B}| & \verb|\left[ #1,#2 \right]}%{\left(#1 , #2 \right)| \\
+$ \psdisc{A}{B} $ & 2 & \verb|\psdisc{A}{B}| & \verb| \llbracket #1,#2 \rrbracket | \\
+$ \proddual{A}{B} $ & 2 & \verb|\proddual{A}{B}| & \verb|\left\langle #1,\, #2 \right\rangle| \\
+$ \normc{u} $ & 1 & \verb|\normc{u}| & \verb|\lvert\!\lvert #1 \rvert\!\rvert| \\
+$ \normd{u} $ & 1 & \verb|\normd{u}| & \verb|\lvert\!\lvert\!\vert #1 \rvert\!\rvert\!\rvert| \\
+$ \jump{u} $ & 1 & \verb|\jump{u}| & \verb| \llbracket #1 \rrbracket | \\
+\multicolumn{4}{l}{Analysis of numerical results}\\
+\hline
+$ \rate $ & 0 & \verb|\rate| & \verb|\mathrm{\textsc{r}}| \\
+$ \Errd{u} $ & 1 & \verb|\Errd{u}| & \verb|\mathbf{Er}_{#1}| \\
+$ \Errc{u} $ & 1 & \verb|\Errc{u}| & \verb|Er_{#1}| \\
+$ \nsys $ & 0 & \verb|\nsys| & \verb|\mathrm{n_{\textsc{s}ys}}| \\
+$ \nite $ & 0 & \verb|\nite| & \verb|\mathrm{n_{\textsc{i}te}}| \\
+$ \nnz $ & 0 & \verb|\nnz| & \verb|\mathrm{\textsc{nnz}}| \\
+$ \CompCo $ & 0 & \verb|\CompCo| & \verb|\boldsymbol{\chi}| \\
+$ \CompCoR $ & 0 & \verb|\CompCoR| & \verb|\boldsymbol{\chi}_{\mathrm{\textsc{r}el}}| \\
+$ \stencil $ & 0 & \verb|\stencil| & \verb|\mathrm{St}| \\
+ \Hex  & 0 & \verb|\Hex| & \verb|\texttt{Hex}\@\xspace| \\
+ \PrT  & 0 & \verb|\PrT| & \verb|\texttt{PrT}\@\xspace| \\
+ \PrG  & 0 & \verb|\PrG| & \verb|\texttt{PrG}\@\xspace| \\
+ \CB  & 0 & \verb|\CB| & \verb|\texttt{CB}\@\xspace| \\
+ \K  & 0 & \verb|\K| & \verb|\texttt{Ker}\@\xspace| \\
+\multicolumn{4}{c}{\bfseries Macros for environments}\\
+\multicolumn{4}{l}{Equations}\\
+\hline
+$  $ & 1 & \verb|\eq{...}| & \verb|\begin{equation} #1 \end{equation}| \\
+$  $ & 1 & \verb|\eqn{...}| & \verb|\begin{equation*} #1 \end{equation*}| \\
+$  $ & 1 & \verb|\eqb{...}| & \verb|\begin{equation}\boxed{ #1 }\end{equation}| \\
+$  $ & 1 & \verb|\eqnb{...}| & \verb|\begin{equation*}\boxed{ #1 }\end{equation*}| \\
+\multicolumn{4}{l}{Figures}\\
+\hline
+ & 4 & \begin{tabular}{@{}l} \verb|\Figure{h}| [\dots]\\ \verb|{0.9}{pic}{Cap}| \end{tabular} & \begin{tabular}{@{}l}
+   \verb|\begin{figure}[#1] \centering| [\dots]\\
+   \verb|\includegraphics[width=#2\textwidth]{#3}| [\dots]\\
+   \verb|\caption{#4} \end{figure}| \end{tabular}\\
+\hhline{====}
+\multicolumn{4}{c}{\Large \bfseries {\scshape MR}'s {\scshape Macros}}\\
+\hhline{====}
+\multicolumn{4}{c}{\bfseries Miscellaneous}\\
+\hline
+$ \bO{h} $ & 1 & \verb|\bO{u}| & \verb|\mathcal{O}\left(#1\right)| \\
+$ \abs{p} $ & 1 & \verb|\abs{p}| & \verb|\left\lvert #1\right\rvert| \\
+$ \nrm{u} $ & 1 & \verb|\nrm{u}| & \verb|\left\lVert #1\right\rVert| \\
+$ \dsb{A}{B} $ & 2 & \verb|\dsb{A}{B}| & \verb|\llbracket #1,\,#2 \rrbracket| \\
+\multicolumn{4}{c}{\bfseries Variable modifiers}\\
+\multicolumn{4}{l}{Dual, hybrid, vectorial, discrete, \dots}\\
+\hline
+$ \dual{u} $ & 1 & \verb|\dual{u}| & \verb|\widetilde{#1}| \\
+$ \hyb{u} $ & 1 & \verb|\hyb{u}| & \verb|\widehat{#1}| \\
+$ \vct{u} $ & 1 & \verb|\vct{u}| & \verb|\underline{#1}| \\
+$ \tens{u} $ & 1 & \verb|\tens{u}| & \verb|\underline{\underline{#1}}| \\
+$ \hybv{u} $ & 1 & \verb|\hybv{u}| & \verb|\widehat{\vct{#1}}| \\
+$ \dsc $ & 0 & \verb|\dsc| & \verb|\mathrm{h}| \\
+\hline
+$ \hVex $ & 0 & \verb|\hVex| & \verb|\hyb{\Vex}| \\
+\multicolumn{4}{c}{\bfseries Time discretization \& Iterations}\\
+\hline
+$ u\np[n+1] $ & 1[n+1] & \verb|u\np[n+1]| & \verb|^{#1}| \\
+$ u\nm[n-1] $ & 1[n-1] & \verb|u\nm[n-1]| & \verb|^{#1}| \\
+$ \deltat $ & 0 & \verb|\deltat| & \verb|\Delta t| \\
+$ u\kp[n+1] $ & 1[k+1] & \verb|u\kp[n+1]| & \verb|_{#1}| \\
+$ u\km[n-1] $ & 1[k-1] & \verb|u\km[n-1]| & \verb|_{#1}| \\
+\multicolumn{4}{c}{\bfseries Geometry}\\
+\hline
+$ \meas{f} $ & 1 & \verb|\meas{f}| & \verb|\left\lvert #1\right\rvert| \\
+$\ifc$ & 0 & \verb|\ifc| & \verb|\incid{\face}{\cell}|\\%
+$ \nf $ & 0 & \verb|\nf| & \verb|\norma{\face}| \\
+$ \nfc $ & 0 & \verb|\nfc| & \verb|\norma{\face\cell}| \\
+$ \restr{f} $ & 1 & \verb|\restr{f}| & \verb|{}_{\lvert #1}| \\
+\multicolumn{4}{c}{\bfseries Sets shortcuts}\\
+\hline
+$ \Fc $ & 0 & \verb|\Fc| & \verb|\faceh_{\cell}| \\
+$ \finf $ & 0 & \verb|\finf| & \verb|\face \in \Fc| \\
+$ \finh $ & 0 & \verb|\finh| & \verb|\face \in \faceh| \\
+$ \cinc $ & 0 & \verb|\cinc| & \verb|\cell \in \cellh| \\
+$ \cinf $ & 0 & \verb|\cinf| & \verb|\cell \in \cellh_{\face}| \\
+$ \Vex\uc $ & 0 & \verb|\uc| & \verb|_{\cell}| \\ %
+$ \Vex\uf $ & 0 & \verb|\uf| & \verb|_{\face}| \\ %
+$ \Vex\ud $ & 0 & \verb|\ud| & \verb|_{\dsc}| \\ %
+$ \Vex\uh $ & 0 & \verb|\ud| & \verb|\ud| \\ %
+\multicolumn{4}{c}{\bfseries Discrete setting}\\
+\hline
+$ \R $ & 0 & \verb|\R| & \verb|\mathbb{R}| \\
+$ \Pk[d] $ & 1 [k] & \verb|\Pk[d]| & \verb|\mathbb{P}^{#1}| \\
+\multicolumn{4}{c}{\bfseries Spaces}\\
+\multicolumn{4}{l}{Hybrid, pressure/velocity}\\
+\hline
+$ \vsp $ & 0 & \verb|\vsp| & \verb|\mathcal{U}| \\
+$ \vvsp $ & 0 & \verb|\vvsp| & \verb|\vct{\vsp}| \\
+$ \hvsp $ & 0 & \verb|\hvsp| & \verb|\hybv{\vsp}| \\
+$ \spsp $ & 0 & \verb|\spsp| & \verb|\mathcal{P}| \\
+\multicolumn{4}{l}{Original CDO spaces}\\
+\hline
+$ \psp{u} $ & 1 & \verb|\psp{u}| & \verb|\mathcal{#1}| \\
+$ \dsp{u} $ & 1 & \verb|\dsp{u}| & \verb|\dual{\mathcal{#1}}| \\
+\multicolumn{4}{c}{\bfseries Reductions and deRham maps}\\
+\multicolumn{4}{l}{Hybrid, velocity}\\
+\hline
+$ \prj $ & 0 & \verb|\prj| & \verb|\pi| \\
+$ \red $ & 0 & \verb|\red| & \verb|\prj| \\
+$ \Red{u} $ & 1 & \verb|\Red{u}| & \verb|\red_{#1}| \\
+$ \vRed{u} $ & 1 & \verb|\vRed{u}| & \verb|\vct{\red}_{#1}| \\
+$ \Redc $ & 0 & \verb|\Redc| & \verb|\vRed{\cell}\,| \\
+$ \Redf $ & 0 & \verb|\Redf| & \verb|\vRed{\face}\,| \\
+$ \Redh $ & 0 & \verb|\Redh| & \verb|\hv{\red}_{\cell}\,| \\
+$ \Redg $ & 0 & \verb|\Redg| & \verb|\hv{\red}_{\cellh}\,| \\
+\multicolumn{4}{l}{Pressure}\\
+\hline
+$ \Redp $ & 0 & \verb|\Redp| & \verb|\Red{\cell}\,| \\
+$ \Redph $ & 0 & \verb|\Redph| & \verb|\Red{\cellh}\,| \\
+\multicolumn{4}{c}{\bfseries Differential operators}\\
+\multicolumn{4}{l}{Continuous}\\
+\hline
+$ \pd{f}{x} $ & 2 & \verb|\pd{f}{x}| & \verb|\frac{\partial{#1}}{\partial{#2}}| \\
+$ \ddt{u} $ & 1 & \verb|\ddt{u}| & \verb|\pd{#1}{t}| \\
+$ \dive $ & 0 & \verb|\dive| & \verb|\vct{\nabla}\cdot| \\
+$ \grad $ & 0 & \verb|\grad| & \verb|\vct{\nabla}\,| \\
+$ \rot $ & 0 & \verb|\rot| & \verb|\vct{\nabla}\times| \\
+$ \graddiv $ & 0 & \verb|\graddiv| & \verb|\grad\dive| \\
+$ \lapl $ & 0 & \verb|\lapl| & \verb|\vct{\Delta}\,| \\
+\multicolumn{4}{l}{Discrete}\\
+\hline
+$ \dddt{u} $ & 1 & \verb|\dddt{u}| & \verb|\frac{{#1}^{n+1}-{#1}^{n}}{\deltat}| \\
+$ \dddtp{u} $ & 1 & \verb|\dddtp{u}| & \verb|\frac{{#1}^{n+1}-{#1}^{n}}{\deltat}| \\
+$ \dddtm{u} $ & 1 & \verb|\dddtm{u}| & \verb|\frac{{#1}^{n}-{#1}^{n-1}}{\deltat}| \\
+\multicolumn{4}{l}{Orignial CDO}\\
+\hline
+$ \Gh $ & 0 & \verb|\Gh| & \verb|\mathrm{G}| \\
+$ \vGh $ & 0 & \verb|\vGh| & \verb|\vct{\Gh}| \\
+$ \tGh $ & 0 & \verb|\tGh| & \verb|\tens{\Gh}| \\
+$ \Dh $ & 0 & \verb|\Dh| & \verb|\mathrm{D}| \\
+$ \Dhh $ & 0 & \verb|\Dhh| & \verb|\mathrm{D}^{H}_{\cellh}| \\
