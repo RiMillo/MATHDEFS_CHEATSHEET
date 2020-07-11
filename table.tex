@@ -34,8 +34,10 @@ $ \bc $ & 0 & \verb|\bc| & \verb|\mathrm{bc}| \\
 $ \harm $ & 0 & \verb|\harm| & \verb|\mathsf{h}| \\
 $ \vb $ & 0 & \verb|\vb| & \verb|\mathsf{vb}| \\
 $ \cb $ & 0 & \verb|\cb| & \verb|\mathsf{cb}| \\
-$ \pOm $ & 0 & \verb|\pOm| & \verb|\partial\Omega| \\
-$ \closure $ & 0 & \verb|\closure| & \verb|\overline{\partial}| \\
+$ \bnd $ & 0 & \verb|\bnd| & \verb|\partial| \\
+$ \Dom $ & 0 & \verb|\Dom| & \verb|\Omega| \\
+$ \pOm $ & 0 & \verb|\pOm| & \verb|\bnd\Dom| \\
+$ \closure $ & 0 & \verb|\closure| & \verb|\overline{\bnd}| \\
 \hline
 $ \rhs $ & 0 & \verb|\rhs| & \verb|\mathsf{RHS}| \\
 $ \mom $ & 0 & \verb|\mom| & \verb|\mathsf{mom}| \\
@@ -425,11 +427,11 @@ $ \hVtest $ & 0 & \verb|\hVtest| & \verb|\hyb{\Vtest}| \\
 $ \hVttest $ & 0 & \verb|\hVttest| & \verb|\hyb{\Vttest}| \\
 \multicolumn{4}{c}{\bfseries Time discretization \& Iterations}\\
 \hline
-$ u\np[n+1] $ & 1[n+1] & \verb|u\np[n+1]| & \verb|^{#1}| \\
-$ u\nm[n-1] $ & 1[n-1] & \verb|u\nm[n-1]| & \verb|^{#1}| \\
+$ u\np[1] $ & 1[1] & \verb|u\np[1]| & \verb|^{n+#1}| \\
+$ u\nm[1] $ & 1[1] & \verb|u\nm[1]| & \verb|^{n-#1}| \\
 $ \deltat $ & 0 & \verb|\deltat| & \verb|\Delta t| \\
-$ u\kp[n+1] $ & 1[k+1] & \verb|u\kp[n+1]| & \verb|_{#1}| \\
-$ u\km[n-1] $ & 1[k-1] & \verb|u\km[n-1]| & \verb|_{#1}| \\
+$ u\kp[1] $ & 1[1] & \verb|u\kp[1]| & \verb|_{k+#1}| \\
+$ u\km[1] $ & 1[1] & \verb|u\km[1]| & \verb|_{k-#1}| \\
 \multicolumn{4}{c}{\bfseries Geometry}\\
 \hline
 $ \meas{f} $ & 1 & \verb|\meas{f}| & \verb|\left\lvert #1\right\rvert| \\

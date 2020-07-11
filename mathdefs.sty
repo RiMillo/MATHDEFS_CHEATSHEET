@@ -11,7 +11,7 @@
 %\RequirePackage{amsmath}% Already loaded by mathtools
 \RequirePackage{mathtools}
 \RequirePackage{amsthm}
-\RequirePackage{stmaryrd}% for double square brackets
+%\RequirePackage{stmaryrd}% for double square brackets
 \RequirePackage{xspace}
 %\RequirePackage{empheq}% braces inside subequations
 %
@@ -63,7 +63,8 @@
 \newcommand{\vb}{\mathsf{vb}}
 \newcommand{\cb}{\mathsf{cb}}
 \newcommand{\bnd}{\partial}
-\newcommand{\pOm}{\bnd\Omega}
+\newcommand{\Dom}{\Omega}
+\newcommand{\pOm}{\bnd\Dom}
 \newcommand{\closure}{\overline{\bnd}}
 %
 \newcommand{\rhs}{\mathsf{RHS}}
@@ -477,12 +478,14 @@
 %\newcommand{\ut}{\ensuremath{\tilde{u}}}
 %\newcommand{\uh}{\ensuremath{\hat{u}}}
 % Time discretisation
-\newcommand{\np}[1][n+1]{^{#1}}
-\newcommand{\nm}[1][n-1]{^{#1}}
+\newcommand{\tmst}[1]{\sp{#1}} % \sp = ^
+\newcommand{\np}[1][1]{\tmst{n-#1}}
+\newcommand{\nm}[1][1]{\tmst{n-#1}}
 \newcommand{\deltat}{\Delta t} %\tau
 % Iterations
-\newcommand{\kp}[1][k+1]{_{#1}}
-\newcommand{\km}[1][k-1]{_{#1}}
+\newcommand{\itst}[1]{\sb{#1}} % \sb = _
+\newcommand{\kp}[1][1]{\itst{k+#1}}
+\newcommand{\km}[1][1]{\itst{k-#1}}
 % Geometry
 \newcommand{\meas}[1]{\ensuremath{\left\lvert #1\right\rvert}}
 \newcommand{\ifc}{\ensuremath{\incid{\face}{\cell}}}
